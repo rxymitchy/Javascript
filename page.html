@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+  </head>
+  <body>
+    <!-- Changing Text Content -->
+    <h1 id="title">Welcome to DOMs</h1>
+    <script>
+      const title = document.getElementById("title");
+      title.textContent = "New Title"; // Updates text
+    </script>
+  </body>
+</html>
+
+<!-- Changing HTML Structure -->
+<div id="container"></div>
+<script>
+  const container = document.getElementById("container");
+  container.innerHTML = "<p>Dynamic Content</p>"; // Adds a paragraph
+</script>
+
+<!-- Adding or Modifying Attributes -->
+<img id="image" src="placeholder.jpg">
+<script>
+  const image = document.getElementById("image");
+  image.setAttribute("src", "new-image.jpg"); // Updates the image source
+</script>
+
+<!-- Changing Styles -->
+<p id="text" class="highlight">Style Me!</p>
+<script>
+  const text = document.getElementById("text");
+  text.style.color = "blue"; // Changes text color
+  text.style.fontSize = "20px"; // Changes font size
+</script>
+
+<!-- Adding and Removing Classes -->
+<script>
+  const text = document.getElementById("text");
+  text.classList.add("bold"); // Adds a class
+  text.classList.remove("highlight"); // Removes a class
+</script>
+
+<!-- Changing Content on Button Click-->
+<p id="message">Click the button to change me!</p>
+<button id="btn">Click Me</button>
+<script>
+  const button = document.getElementById("btn");
+  const message = document.getElementById("message");
+
+  button.addEventListener("click", () => {
+    message.textContent = "You clicked the button!";
+  });
+</script>
+
+<!-- Creating New Elements Dynamically -->
+<ul id="list"></ul>
+<button id="add">Add Item</button>
+<script>
+  const list = document.getElementById("list");
+  const addButton = document.getElementById("add");
+
+  addButton.addEventListener("click", () => {
+    const newItem = document.createElement("li"); // Create new list item
+    newItem.textContent = "New Item"; // Set its text
+    list.appendChild(newItem); // Add it to the list
+  });
+</script>
+
+<!-- Event types
+click	When an element is clicked.
+mouseover	When the mouse hovers over an element.
+keydown	When a key is pressed.
+submit	When a form is submitted.-->
+
+<!-- Listening for a Click Event -->
+<button id="alert">Show Alert</button>
+<script>
+  const alertButton = document.getElementById("alert");
+  alertButton.addEventListener("click", () => {
+    alert("Button clicked!");
+  });
+</script>
+
+<!-- The D0cument Object Model is an interface that represents an 
+ HTML or XML document as a tree structure, where each node is an object.-->
+<!-- By ID-->
+ <script>
+    const title = document.getElementById("title");
+    console.log(title.textContent);
+ </script>
+
+<!-- By Class;document.getElementsByClassName("className"); -->
+<p class="intro">Welcome!</p>
+<p class="intro">Let's learn the DOM.</p>
+<script>
+  const intros = document.getElementsByClassName("intro");
+  console.log(intros[0].textContent); // Output: Welcome!
+</script>
+
+<!-- By tag name:document.getElementsByTagName("tagName"); -->
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<script>
+  const paragraphs = document.getElementsByTagName("p");
+  console.log(paragraphs.length); // Output: 2
+</script>
+
+<!-- Query Selectors: document.querySelector("selector"); -->
+<p id="info" class="highlight">Hello!</p>
+<script>
+  const info = document.querySelector("#info");
+  console.log(info.textContent); // Output: Hello!
+</script>
