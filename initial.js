@@ -2,6 +2,8 @@ let myName = "Mitchelle"; //string
 const max_age = 120; //constant value
 let age = 22; //age
 let greeting = "Hello " +(myName);
+let myrole; //unassigned
+var notuse; //outdated way for declarations in javascript
 
 let favcolors = ['pink', 'purple', 'black', 'white']; //array
 let user = {name: 'Mitchelle', age: 22, role: 'Developer'};//pbjest
