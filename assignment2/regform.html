@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Elements and Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Interactive Button -->
+    <div class="container">
+        <button id="colorButton">Change Background Color</button>
+
+        <!-- Slider with Real-Time Feedback -->
+        <div class="slider-container">
+            <label for="textSizeSlider">Adjust Text Size:</label>
+            <input type="range" id="textSizeSlider" min="10" max="50" value="16">
+            <span id="sliderValue">16px</span>
+        </div>
+
+        <!-- Modal -->
+        <button id="openModalBtn">Open Modal</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModalBtn">&times;</span>
+                <p>This is a modal!</p>
+            </div>
+        </div>
+
+        <!-- Form with Validation -->
+        <form id="myForm">
+            <h2>Sign Up Form</h2>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <span id="nameError" class="error"></span>
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error"></span>
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <span id="passwordError" class="error"></span>
+            <br>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Bonus: Dropdown Menu -->
+        <label for="dropdown">Select an option:</label>
+        <select id="dropdown">
+            <option value="default">Select...</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+        </select>
+        <span id="dropdownMessage"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

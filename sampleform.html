@@ -1,0 +1,35 @@
+<!-- Basic Required Validation -->
+<form id="myForm">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <button type="submit">Submit</button>
+    <p id="errorMessage" style="color: red;"></p>
+  </form>
+  <script>
+    const form = document.getElementById("myForm");
+    const email = document.getElementById("email");
+    const errorMessage = document.getElementById("errorMessage");
+  
+    form.onsubmit = function (e) {
+      if (!email.value) {
+        e.preventDefault(); // Prevent form submission
+        errorMessage.textContent = "Email is required!";
+      }
+    };
+  </script>
+
+<!-- Validate Username Length -->
+<label for="username">Username:</label>
+<input type="text" id="username">
+<p id="validationMessage"></p>
+<script>
+  const username = document.getElementById("username");
+
+  username.oninput = function () {
+    if (username.value.length < 5) {
+      username.setCustomValidity("Username must be at least 5 characters.");
+    } else {
+      username.setCustomValidity("");
+    }
+  };
+</script>

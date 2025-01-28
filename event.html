@@ -1,0 +1,110 @@
+<script>
+//Event Handling in Javascript
+// 1. Inline html event
+<button onclick="alert('Button clicked!')">Click Me</button>
+
+// 2. DOM Property Method - Assign a function to an element’s event property.
+const button = document.getElementById('my Button');
+button.onclick = function(){
+    alert('Button Clicked!');
+};
+
+// 3. Using addEventListener (Preferred)
+const button = document.getElementById('my Button');
+button.addEventListener('click', () => {
+     alert('Button Clicked')
+})
+
+
+// Event Objects - provides additional information about the event
+document.addEventListener('click', (e) => {
+    console.log(`Mouse clicked at: (${e.clientX}, ${e.clientY})`);
+  });
+</script>
+
+
+<!-- Common Event Types and Attributes -->
+<!-- The onclick Event - Change Background Color on Click --> 
+<button id="colorButton">Change Background</button>
+<script>
+  const button = document.getElementById("colorButton");
+  button.onclick = function () {
+    document.body.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  };
+</script>
+
+<!-- Mouse Over Event -->
+<p id="hoverText">Hover over this text to highlight it!</p>
+<script>
+  const text = document.getElementById("hoverText");
+  text.onmouseover = function () {
+    text.style.color = "red";
+    text.style.fontWeight = "bold";
+  };
+  text.onmouseout = function () {
+    text.style.color = "black";
+    text.style.fontWeight = "normal";
+  };
+</script>
+
+<!-- Onchange Event -->
+<input type="text" id="nameInput" placeholder="Enter your name">
+<p id="nameDisplay"></p>
+<script>
+  const input = document.getElementById("nameInput");
+  const display = document.getElementById("nameDisplay");
+
+  input.onchange = function () {
+    display.textContent = `Hello, ${input.value}!`;
+  };
+</script>
+
+<!-- Buttons -->
+<!-- Toggle Visibility -->
+<button id="toggleButton">Hide Text</button>
+<p id="toggleText">This text will be hidden or shown when you click the button.</p>
+<script>
+  const button = document.getElementById("toggleButton");
+  const text = document.getElementById("toggleText");
+
+  button.onclick = function () {
+    if (text.style.display === "none") {
+      text.style.display = "block";
+      button.textContent = "Hide Text";
+    } else {
+      text.style.display = "none";
+      button.textContent = "Show Text";
+    }
+  };
+</script>
+
+<!-- Adjust Font Size with a Slider -->
+<input type="range" id="fontSlider" min="10" max="50" value="20">
+<p id="sliderText" style="font-size: 20px;">Adjust my size!</p>
+<script>
+  const slider = document.getElementById("fontSlider");
+  const text = document.getElementById("sliderText");
+
+  slider.oninput = function () {
+    text.style.fontSize = `${slider.value}px`;
+  };
+</script>
+
+<!-- Modal(popup elements that grab the user’s attention)-->
+<button id="openModal">Open Modal</button>
+<div id="modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); padding:20px; background:white; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+  <p>This is a modal!</p>
+  <button id="closeModal">Close</button>
+</div>
+<script>
+  const modal = document.getElementById("modal");
+  const openModal = document.getElementById("openModal");
+  const closeModal = document.getElementById("closeModal");
+
+  openModal.onclick = function () {
+    modal.style.display = "block";
+  };
+  closeModal.onclick = function () {
+    modal.style.display = "none";
+  };
+</script>
