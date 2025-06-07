@@ -79,5 +79,3 @@ This project is licensed under the MIT License.
 ---
 
 > Great for learners building a strong JavaScript foundation with practical exercises.
-
-```
